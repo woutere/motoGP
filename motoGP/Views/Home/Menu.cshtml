@@ -1,7 +1,53 @@
 ﻿
 @{
+    Layout = "~/Views/Shared/_NewLayout.cshtml";
     ViewData["Title"] = "Menu";
 }
 
-<h2>Menu</h2>
+<style>
+    .banner {
+        padding: 40px
+    }
 
+    .centered {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+</style>
+@{
+    int BannerId = (int)(ViewData["BannerNr"]);
+        <img src="~/images/allerlei/banner@{BannerId.ToString();}.jpg" class="banner" />
+}
+
+
+<div class="centered">
+    <table>
+        <tr>
+            <td>
+                <a href="Info/ListRaces">
+                    <img src="~/images/allerlei/races.png" />
+                </a>
+            </td>
+            <td>
+                <a href="Info/ListTeams">
+                    <img src="~/images/allerlei/riders.png" />
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="Info/ListRiders">
+                    <img src="~/images/allerlei/teams.png" />
+                </a>
+            </td>
+            <td>
+                <a href="Shop/OrderTicket">
+                    <img src="~/images/allerlei/tickets.png" />
+                </a>
+            </td>
+        </tr>
+
+    </table>
+</div>
