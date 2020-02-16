@@ -1,12 +1,14 @@
 ﻿
 @{
-    Layout = "~/Views/Shared/_NewLayout.cshtml";
-    ViewData["Title"] = "Menu";
+    Layout = "/Views/Shared/Layout.cshtml";
+    ViewData["Title"] = "Menu - MotoGP";
 }
 
 <style>
     .banner {
-        padding: 40px
+        padding: 40px;
+        position:fixed;
+        
     }
 
     .centered {
@@ -17,8 +19,7 @@
     }
 </style>
 @{
-    int BannerId = (int)(ViewData["BannerNr"]);
-        <img src="~/images/allerlei/banner@{BannerId.ToString();}.jpg" class="banner" />
+        <img src=@ViewData["BannerNr"] class="banner" />
 }
 
 
