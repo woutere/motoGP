@@ -6,11 +6,34 @@
     <meta name="viewport" content="width=device-width" />
     <title>@ViewData["Title"] - MotoGP</title>
     <link rel="stylesheet" href="~/css/site.css" />
-    @{ var banners = new List<String> { "bannerRaces.jpg", "bannerRiders.jpg", "bannerTeams.jpg", "bannerTickets.jpg" };}
-</head>
-<body>
+    <style>
+        .banner 
+        {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }
 
-    <h1>Order tickets</h1>
+        
+    </style>
+</head>
+@{
+    var banners = new List<String> { "bannerRaces.jpg", "bannerRiders.jpg", "bannerTeams.jpg", "bannerTickets.jpg" };
+    if (ViewData["BannerNr"] == null)
+    {
+        Random random = new Random();
+        ViewData["BannerNr"] = (int)0;
+        banners[0] = "banner" + random.Next(1, 5) + ".jpg";
+    }
+}
+
+<body>
+    <a href="/Home/Menu">
+        <img src="~/images/allerlei/@banners[(int)ViewData["BannerNr"]]" class="banner" />
+    </a>
+
+    <h1 class="center">@ViewData["Title"]</h1>
     <div>
         @RenderBody()
     </div>

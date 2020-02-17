@@ -1,50 +1,45 @@
 ﻿
 @{
-    Layout = "/Views/Shared/Layout.cshtml";
+    Layout = "/Views/Shared/_Layout.cshtml";
     ViewData["Title"] = "Menu - MotoGP";
 }
 
 <style>
-    .banner {
-        padding: 40px;
-        position:fixed;
-        
-    }
-
     .centered {
         position: fixed;
         top: 50%;
         left: 50%;
         transform: translate(-50%,-50%);
     }
+    h1
+    {
+        text-align:center
+    }
 </style>
-@{
-        <img src=@ViewData["BannerNr"] class="banner" />
-}
 
 
 <div class="centered">
     <table>
         <tr>
             <td>
-                <a href="Info/ListRaces">
+                <a href="../Info/ListRaces">
                     <img src="~/images/allerlei/races.png" />
                 </a>
             </td>
             <td>
-                <a href="Info/ListTeams">
+                <a href="../Info/ListTeams">
                     <img src="~/images/allerlei/riders.png" />
                 </a>
             </td>
         </tr>
         <tr>
             <td>
-                <a href="Info/ListRiders">
+                <a href="../Info/ListRiders">
                     <img src="~/images/allerlei/teams.png" />
                 </a>
             </td>
             <td>
-                <a href="Shop/OrderTicket">
+                <a href="../Shop/OrderTicket">
                     <img src="~/images/allerlei/tickets.png" />
                 </a>
             </td>

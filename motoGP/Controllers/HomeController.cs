@@ -22,11 +22,10 @@ namespace motoGP.Controllers
 
         public IActionResult Menu()
         {
-            Random random = new Random();
-            ViewData["BannerNr"] = "/images/allerlei/banner"+random.Next(1, 5)+".jpg";
-
             return View();
         }
+
+        
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
