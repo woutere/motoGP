@@ -14,7 +14,7 @@ namespace motoGP.Controllers
         {
             return View();
         }
-
+        //3
         public IActionResult Privacy()
         {
             return View();
