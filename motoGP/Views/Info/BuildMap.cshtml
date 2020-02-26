@@ -4,13 +4,13 @@
 
     <img src="~/images/allerlei/map.png" usemap="#worldmap" />
 
-    <map name="#worldmap"></map>
-    @{ 
-        foreach (var race in ViewData)
+    <map name="#worldmap">
+        @foreach (var race in ViewData["ListRaces"] as IEnumerable<Race>)
         {
-
+            <area shape="circle" coords="@race.X,@race.Y,10" href="./ShowRace" alt="@race.RaceID" />
         }
-    }
+    </map>
+    
     
 }
 
