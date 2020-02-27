@@ -7,9 +7,10 @@
     <map name="#worldmap">
         @foreach (var race in ViewData["ListRaces"] as IEnumerable<Race>)
         {
-            <area shape="circle" coords="@race.X,@race.Y,30" href="./ShowRace" alt="@race.RaceID" />
+            <area shape="circle" coords="@race.X,@race.Y,10" href="./ShowRace" alt="@race.RaceID" />
         }
     </map>
+    
     
 }
 
