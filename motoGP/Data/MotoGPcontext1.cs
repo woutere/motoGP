@@ -7,18 +7,18 @@ using System.Threading.Tasks;
 
 namespace motoGP.Data
 {
-    public class motoGPcontext:DbContext
+    public class MotoGPcontext:DbContext
     {
-        public motoGPcontext(DbContextOptions<motoGPcontext> options)
+        public MotoGPcontext(DbContextOptions<MotoGPcontext> options)
             : base(options)
         {
 
         }
-        public DbSet<Team> teams { get; set; }
-        public DbSet<Rider> riders { get; set; }
-        public DbSet<Race> races { get; set; }
-        public DbSet<Ticket> tickets { get; set; }
-        public DbSet<Country> countries { get; set; }
+        public DbSet<Team> Teams { get; set; }
+        public DbSet<Rider> Riders { get; set; }
+        public DbSet<Race> Races { get; set; }
+        public DbSet<Ticket> Tickets { get; set; }
+        public DbSet<Country> Countries { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

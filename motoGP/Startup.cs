@@ -35,7 +35,7 @@ namespace motoGP
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            services.AddDbContext<motoGPcontext>(options =>
+            services.AddDbContext<MotoGPcontext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("MotoGPConnection")));
         }
 

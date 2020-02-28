@@ -18,14 +18,30 @@ namespace motoGP.Models
 
         public int RaceID { get; set; }
         public string Name { get; set; }
-        public int countryID { get; set; }
-        public Country country { get; set; }
-        public string description { get; set; }
-        public string length { get; set; }
+        public int CountryID { get; set; }
+        public Country Country { get; set; }
+        public string Description { get; set; }
+        public string Length { get; set; }
         [DataType(DataType.Date)]
-        public DateTime date { get; set; }
+        public DateTime Date { get; set; }
         public int X { get; set; }
         public int Y { get; set; }
 
+        public Race(int raceID, string name, int countryID, Country country, string description, string length, DateTime date, int x, int y)
+        {
+            RaceID = raceID;
+            Name = name;
+            CountryID = countryID;
+            Country = country;
+            Description = description;
+            Length = length;
+            Date = date;
+            X = x;
+            Y = y;
+        }
+
+        public Race()
+        {
+        }
     }
 }

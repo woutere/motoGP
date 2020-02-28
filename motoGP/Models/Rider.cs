@@ -7,14 +7,31 @@ namespace motoGP.Models
 {
     public class Rider
     {
-        public int riderId { get; set; }
-        public string lastnNme { get; set; }
-        public string firstName { get; set; }
-        public int countryID { get; set; }
-        public Country country { get; set; }
-        public int teamID { get; set; }
-        public Team team { get; set; }
+        public int RiderId { get; set; }
+        public string LastName { get; set; }
+        public string FirstName { get; set; }
+        public int CountryID { get; set; }
+        public Country Country { get; set; }
+        public int TeamID { get; set; }
+        public Team Team { get; set; }
         public string Bike { get; set; }
         public int Number { get; set; }
+
+        public Rider(int riderId, string lastName, string firstName, int countryID, Country country, int teamID, Team team, string bike, int number)
+        {
+            RiderId = riderId;
+            LastName = lastName;
+            FirstName = firstName;
+            CountryID = countryID;
+            Country = country;
+            TeamID = teamID;
+            Team = team;
+            Bike = bike;
+            Number = number;
+        }
+
+        public Rider()
+        {
+        }
     }
 }

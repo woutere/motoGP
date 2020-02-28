@@ -9,7 +9,19 @@ namespace motoGP.Models
     {
         public int CountryID { get; set; }
         public string Name { get; set; }
-        public ICollection<Ticket> tickets { get; set; }
-        public ICollection<Rider> riders { get; set; }
+        public ICollection<Ticket> Tickets { get; set; }
+        public ICollection<Rider> Riders { get; set; }
+
+        public Country(int countryID, string name, ICollection<Ticket> tickets, ICollection<Rider> riders)
+        {
+            CountryID = countryID;
+            Name = name;
+            Tickets = tickets;
+            Riders = riders;
+        }
+
+        public Country()
+        {
+        }
     }
 }

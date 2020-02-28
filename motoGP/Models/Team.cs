@@ -7,8 +7,19 @@ namespace motoGP.Models
 {
     public class Team
     {
-        public int teamID { get; set; }
-        public string naam { get; set; }
-        public string logo { get; set; }
+        public int TeamID { get; set; }
+        public string Naam { get; set; }
+        public string Logo { get; set; }
+
+        public Team(int teamID, string naam, string logo)
+        {
+            TeamID = teamID;
+            Naam = naam;
+            Logo = logo;
+        }
+
+        public Team()
+        {
+        }
     }
 }
