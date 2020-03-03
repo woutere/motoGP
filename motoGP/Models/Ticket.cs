@@ -19,9 +19,9 @@ namespace motoGP.Models
         public int Number { get; set; }
         [DataType(DataType.Date)]
         public DateTime OrderDate { get; set; }
-        public bool Paid { get; set; }
+        public string Paid { get; set; }
 
-        public Ticket(int ticketID, string name, string email, string addresss, int countryID, Country country, int raceID, Race race, int number, DateTime orderDate, bool paid)
+        public Ticket(int ticketID, string name, string email, string addresss, int countryID, Country country, int raceID, Race race, int number, DateTime orderDate, string paid)
         {
             TicketID = ticketID;
             Name = name;
