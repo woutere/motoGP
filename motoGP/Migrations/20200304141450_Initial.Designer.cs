@@ -10,7 +10,7 @@ using motoGP.Data;
 namespace motoGP.Migrations
 {
     [DbContext(typeof(MotoGPcontext))]
-    [Migration("20200304140653_Initial")]
+    [Migration("20200304141450_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
