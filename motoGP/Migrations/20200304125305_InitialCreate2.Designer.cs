@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using motoGP.Data;
 
 namespace motoGP.Migrations
 {
     [DbContext(typeof(MotoGPcontext))]
-    partial class MotoGPcontextModelSnapshot : ModelSnapshot
+    [Migration("20200304125305_InitialCreate2")]
+    partial class InitialCreate2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -38,6 +40,8 @@ namespace motoGP.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int>("CountryID");
+
                     b.Property<DateTime>("Date");
 
                     b.Property<string>("Description");
@@ -51,6 +55,8 @@ namespace motoGP.Migrations
                     b.Property<int>("Y");
 
                     b.HasKey("RaceID");
+
+                    b.HasIndex("CountryID");
 
                     b.ToTable("Race");
                 });
@@ -126,6 +132,14 @@ namespace motoGP.Migrations
                     b.HasIndex("RaceID");
 
                     b.ToTable("Ticket");
+                });
+
+            modelBuilder.Entity("motoGP.Models.Race", b =>
+                {
+                    b.HasOne("motoGP.Models.Country", "Country")
+                        .WithMany()
+                        .HasForeignKey("CountryID")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("motoGP.Models.Rider", b =>
